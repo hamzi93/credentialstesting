@@ -12,5 +12,9 @@ public class Main {
         credentialsList.add(new Credentials("www.xyz.net","9fas8dfu9ee", "bobba.fett"));
         ExportCredentials exportCredentials =  new CsvExporter();
         exportCredentials.export(credentialsList);
+
+        //HashingDecorator
+        ExportCredentials exp = new HashingDecorator(new CsvExporter());
+        exp.export(credentialsList);
     }
 }
